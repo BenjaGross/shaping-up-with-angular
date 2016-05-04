@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+  <title>Flatlander Gem store</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-controller="StoreController as store">
+<div ng-repeat="product in store.products">
+  <div ng-hide="store.product.soldOut">
+    <h1>Product Name: {{product.name}}</h1>
+    <h2>Product Price: ${{product.price}}</h2>
+      <p>Product Description: {{product.description}}</p>
+      <button ng-show="store.product.canPurchase"> Add to cart </button>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+
+</body>
+</html>
+
